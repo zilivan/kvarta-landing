@@ -1,75 +1,50 @@
-# React + TypeScript + Vite
+# Kvarta Coffee Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Создай лендинг для обжарки кофе "Кварта" (Минск). 
 
-Currently, two official plugins are available:
+ОБЩИЙ СТИЛЬ:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Тёплый, уютный, ремесленный. БЕЗ премиального глянца и пафоса.
 
-## React Compiler
+- Цветовая палитра: тёплый коричневый (#5C3D2E), кремовый (#F5EFE6), бежевый (#D4B896), акцент — тёмно-зелёный или терракотовый.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Шрифты: заголовки — современный serif (например, Playfair Display или Fraunces), основной текст — чистый sans-serif (Inter или Manrope).
 
-## Expanding the ESLint configuration
+- Много воздуха, крупные фото, мягкие скругления (12-16px).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Стиль — как у хорошей крафтовой студии, а не как у сетевого кофейного бренда.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+НАВИГАЦИЯ (шапка):
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Логотип "Кварта" слева (можно просто текстом красивым шрифтом).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Справа: якорные ссылки — "О нас", "Кофе", "Подписка", "Доставка", "Контакты".
 
-```
+- Кнопка "Оставить заявку" (акцентная, тёмно-коричневая).
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+- На мобильных — бургер-меню.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Шапка должна быть фиксированной при скролле с лёгким размытием фона (backdrop-blur).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Сделай сначала только шапку и общую структуру страницы (пустые секции-заготовки).
 
+This project was built with [Lovable](https://lovable.dev).
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/70ba35e3-27bb-42ae-8f27-850d5aa503d2).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
 ```

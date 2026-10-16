@@ -9,7 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://ваш-ник.github.io'], // замените на ваш GitHub Pages URL
+  origin: [
+    'http://localhost:5173',  // локальная разработка
+    'http://localhost:4173',  // preview mode
+    'https://ваш-ник.github.io'  // GitHub Pages (замените на ваш реальный URL)
+  ],
   credentials: true
 }));
 
