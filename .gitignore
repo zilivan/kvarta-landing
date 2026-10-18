@@ -1,12 +1,13 @@
 node_modules/
    dist/
-   .env
-   .env.development
-   .env.production
+   client/.env
+   client/.env.development
+   client/.lovable
+   client/supabase/
+   client/drizzle/
+   server/.env
    *.db
    *.db-journal
    .DS_Store
-   .lovable
-   supabase/
-   drizzle/
+   
    
