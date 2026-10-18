@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
 
-export type OrderType = "one-time" | "subscription";
+export type OrderType = "one-time" | "subscription" | "question";
 
 export type OrderIntent = {
   type: OrderType;

@@ -1,4 +1,11 @@
-# Form task
-- [ ] Add validated lead form and mock POST endpoint.
-- [ ] Add UTM capture, cooldown, and coffee selection integration.
-- [ ] Verify validation, submission, failure, and mobile layout.
+# Roadmap
+- [x] Add validated lead form and mock POST endpoint.
+- [x] Add UTM capture, cooldown, and coffee selection integration.
+- [x] Verify validation, submission, failure, and mobile layout.
+- [x] Build "Подписка на кофе" section: three plans, featured card, buttons wired to the lead form.
+- [x] Verify subscription section on desktop/mobile and plan-button → form prefill.
+- [x] Build "Доставка и самовывоз" section: two blocks, icons in beige plates, Google Maps link.
+- [x] Verify delivery section on desktop/mobile.
+- [ ] Get the real phone number and Telegram address; replace the placeholders in contacts and footer.
+- [ ] Build "Контакты" section (address, hours, phone, email, Instagram, mini-map) and the footer.
+- [ ] Verify contacts, footer, and CTA → form scroll on desktop/mobile.

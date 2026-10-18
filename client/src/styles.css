@@ -226,7 +226,74 @@ a:focus-visible { outline: 2px solid var(--ring); outline-offset: 6px; border-ra
 .coffee-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; }
 .coffee-price { font-size: 21px; font-weight: 700; white-space: nowrap; }
 .coffee-foot .craft-button { min-width: 108px; }
+.subscription-body { margin-top: 36px; }
+.subscription-subtitle { margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: var(--muted-foreground); }
+.subscription-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; list-style: none; padding: 0; margin: 48px 0 0; }
+.subscription-card { position: relative; display: flex; flex-direction: column; padding: 32px 28px; background: var(--card); border: 1px solid var(--border); border-radius: var(--coffee-card-radius); box-shadow: var(--coffee-card-shadow); }
+.subscription-card-featured { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); box-shadow: var(--coffee-card-hover-shadow); }
+.subscription-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px; background: var(--brand-accent); color: var(--primary-foreground); font-size: 11px; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.subscription-name { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.3; }
+.subscription-price { margin: 16px 0 0; font-size: 32px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
+.subscription-period { margin-left: 6px; font-size: 15px; font-weight: 500; color: var(--muted-foreground); }
+.subscription-card-featured .subscription-period { color: color-mix(in oklab, var(--primary-foreground) 72%, transparent); }
+.subscription-description { margin: 10px 0 0; font-size: 15px; line-height: 1.6; }
+.subscription-features { list-style: none; margin: 26px 0 30px; padding: 0; display: grid; gap: 12px; }
+.subscription-feature { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.55; }
+.subscription-feature svg { flex-shrink: 0; margin-top: 3px; color: var(--brand-accent); }
+.subscription-card-featured .subscription-feature svg { color: var(--primary-foreground); }
+.subscription-card .craft-button, .subscription-card .craft-outline { width: 100%; justify-content: center; margin-top: auto; }
+.subscription-card-featured .craft-outline { color: var(--primary-foreground); border-color: color-mix(in oklab, var(--primary-foreground) 45%, transparent); }
+.subscription-card-featured .craft-outline:hover { background: color-mix(in oklab, var(--primary-foreground) 12%, transparent); border-color: var(--primary-foreground); }
+.subscription-note { margin: 36px 0 0; text-align: center; font-size: 14px; line-height: 1.6; color: var(--muted-foreground); }
+.delivery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; list-style: none; padding: 0; margin: 44px 0 0; }
+.delivery-card { display: flex; flex-direction: column; min-width: 0; padding: 34px 32px; background: var(--card); border: 1px solid var(--border); border-radius: var(--coffee-card-radius); box-shadow: var(--coffee-card-shadow); }
+.delivery-icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 999px; background: color-mix(in oklab, var(--accent) 55%, var(--card)); color: var(--accent-foreground); }
+.delivery-icon svg { width: 25px; height: 25px; }
+.delivery-name { margin: 22px 0 0; font-family: var(--font-display); font-size: 25px; font-weight: 600; line-height: 1.3; }
+.delivery-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 13px; }
+.delivery-item { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.6; }
+.delivery-item > span:first-child { flex-shrink: 0; width: 7px; height: 7px; margin-top: 8px; border-radius: 999px; background: var(--accent); }
+.delivery-action { margin-top: auto; align-self: flex-start; }
+.delivery-card .delivery-action { margin-top: 30px; }
+.contacts-body { margin-top: 36px; }
+.contacts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
+.contacts-card { padding: 30px; background: var(--card); border: 1px solid var(--border); border-radius: var(--coffee-card-radius); box-shadow: var(--coffee-card-shadow); }
+.contacts-icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 999px; background: color-mix(in oklab, var(--accent) 55%, var(--card)); color: var(--accent-foreground); }
+.contacts-icon svg { width: 25px; height: 25px; }
+.contacts-name { margin: 20px 0 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.3; }
+.contacts-line { margin: 14px 0 0; font-size: 17px; font-weight: 600; line-height: 1.5; }
+.contacts-hours { display: flex; gap: 9px; align-items: center; margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted-foreground); }
+.contacts-hours svg { flex-shrink: 0; color: var(--brand-accent); }
+.contacts-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 13px; }
+.contacts-item { display: flex; gap: 10px; align-items: center; font-size: 16px; line-height: 1.5; }
+.contacts-item svg { flex-shrink: 0; color: var(--brand-accent); }
+.contacts-item a { color: inherit; text-decoration: none; border-bottom: 1px solid color-mix(in oklab, var(--primary) 26%, transparent); transition: color 180ms, border-color 180ms; }
+.contacts-item a:hover { color: var(--brand-accent); border-color: var(--brand-accent); }
+.contacts-map { display: flex; gap: 16px; align-items: center; margin-top: 24px; padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--coffee-card-radius); color: inherit; text-decoration: none; background: repeating-linear-gradient(90deg, transparent 0 46px, color-mix(in oklab, var(--accent) 42%, transparent) 46px 47px), repeating-linear-gradient(0deg, transparent 0 46px, color-mix(in oklab, var(--accent) 42%, transparent) 46px 47px), var(--card); }
+.contacts-map:hover { border-color: color-mix(in oklab, var(--primary) 40%, transparent); }
+.contacts-map-pin { display: grid; place-items: center; width: 46px; height: 46px; flex-shrink: 0; border-radius: 999px; background: var(--primary); color: var(--primary-foreground); }
+.contacts-map-pin svg { width: 21px; height: 21px; }
+.contacts-map-text { display: grid; gap: 4px; }
+.contacts-map-address { font-size: 17px; font-weight: 600; }
+.contacts-map-action { font-size: 13px; color: var(--muted-foreground); }
+.contacts-body + .lead-body { margin-top: 64px; }
+.site-footer { background: var(--primary); color: var(--primary-foreground); }
+.footer-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto; gap: 40px; align-items: start; padding-block: 56px 40px; }
+.footer-logo { font-family: var(--font-display); font-size: 34px; font-weight: 600; line-height: 1.16; }
+.footer-dot { color: var(--accent); }
+.footer-tagline { margin: 12px 0 0; max-width: 30ch; font-size: 14px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 74%, transparent); }
+.footer-nav { display: grid; gap: 12px; align-content: start; }
+.footer-link { justify-self: start; font-size: 14px; text-decoration: none; color: color-mix(in oklab, var(--primary-foreground) 82%, transparent); transition: color 180ms; }
+.footer-link:hover { color: var(--primary-foreground); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social-link { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--primary-foreground) 28%, transparent); color: var(--primary-foreground); transition: background 180ms, border-color 180ms; }
+.footer-social-link:hover { background: color-mix(in oklab, var(--primary-foreground) 12%, transparent); border-color: var(--primary-foreground); }
+.footer-social-link svg { width: 20px; height: 20px; }
+.footer-bottom { display: flex; padding-block: 20px 26px; border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 18%, transparent); }
+.footer-copy { margin: 0; font-size: 13px; color: color-mix(in oklab, var(--primary-foreground) 68%, transparent); }
+#lead { scroll-margin-top: 112px; }
 .lead-body { max-width: 520px; margin: 40px auto 0; }
+.lead-body .block-title { white-space: normal; overflow-wrap: anywhere; text-wrap: balance; }
 .lead-subtitle { margin: 16px 0 30px; font-size: 15px; line-height: 1.7; color: var(--muted-foreground); }
 .lead-form { display: grid; gap: 22px; }
 .lead-field { display: grid; gap: 9px; }
@@ -246,8 +313,10 @@ a:focus-visible { outline: 2px solid var(--ring); outline-offset: 6px; border-ra
 .lead-spinner { animation: lead-spin 1s linear infinite; }
 @keyframes lead-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .lead-spinner { animation: none; } }
+.subscription-card { transition: transform 220ms ease, box-shadow 220ms ease; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .coffee-card:hover { transform: translateY(-4px); box-shadow: var(--coffee-card-hover-shadow); }
+  .subscription-card:hover { transform: translateY(-4px); box-shadow: var(--coffee-card-hover-shadow); }
 }
 @media (max-width: 1100px) {
   .coffee-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -265,6 +334,9 @@ a:focus-visible { outline: 2px solid var(--ring); outline-offset: 6px; border-ra
   .hero-inner { gap: 44px; }
   .about-story { gap: 40px; }
   .feature-cards { gap: 16px; }
+  .subscription-grid { gap: 20px; }
+  .delivery-grid { gap: 20px; }
+  .contacts-grid { gap: 20px; }
 }
 @media (max-width: 850px) {
   .page-width { width: calc(100% - 40px); }
@@ -297,6 +369,20 @@ a:focus-visible { outline: 2px solid var(--ring); outline-offset: 6px; border-ra
   .about-lead { font-size: 16px; }
   .feature-cards { grid-template-columns: 1fr; gap: 14px; }
   .feature-card { padding: 22px; }
+  .subscription-body { margin-top: 28px; }
+  .subscription-grid { grid-template-columns: 1fr; gap: 26px; margin-top: 34px; }
+  .subscription-card { padding: 26px 22px; }
+  .subscription-note { margin-top: 26px; }
+  .contacts-grid { grid-template-columns: 1fr; gap: 20px; }
+  .contacts-card { padding: 24px 22px; }
+  .contacts-map { padding: 18px 20px; }
+  .contacts-body + .lead-body { margin-top: 44px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; padding-block: 44px 30px; }
+  .footer-logo { font-size: 30px; }
+  #lead { scroll-margin-top: 92px; }
+  .delivery-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+  .delivery-card { padding: 26px 22px; }
+  .delivery-name { font-size: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

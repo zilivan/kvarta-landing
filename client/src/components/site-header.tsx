@@ -34,7 +34,7 @@ export function SiteHeader() {
           {sections.map((section) => <Link key={section.id} to="/" hash={section.id} className="nav-link">{section.label}</Link>)}
         </nav>
         <Button asChild variant="craft" className="desktop-cta">
-          <Link to="/" hash="contacts">Оставить заявку <ArrowUpRight /></Link>
+          <Link to="/" hash="lead">Оставить заявку <ArrowUpRight /></Link>
         </Button>
         <Button variant="ghost" size="icon" className="menu-toggle" aria-label={open ? "Закрыть меню" : "Открыть меню"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -42,7 +42,7 @@ export function SiteHeader() {
       </div>
       {open && <nav id="mobile-navigation" className="mobile-nav page-width" aria-label="Мобильная навигация">
         {sections.map((section) => <Link key={section.id} to="/" hash={section.id} className="nav-link" onClick={() => setOpen(false)}>{section.label}</Link>)}
-        <Button asChild variant="craft"><Link to="/" hash="contacts" onClick={() => setOpen(false)}>Оставить заявку <ArrowUpRight /></Link></Button>
+        <Button asChild variant="craft"><Link to="/" hash="lead" onClick={() => setOpen(false)}>Оставить заявку <ArrowUpRight /></Link></Button>
       </nav>}
     </header>
   );

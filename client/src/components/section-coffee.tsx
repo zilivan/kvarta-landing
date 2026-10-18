@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { setOrderIntent } from "@/lib/order-intent";
-import ethiopiaPhoto from "@/assets/coffee-ethiopia.jpg?url";
-import brazilPhoto   from "@/assets/coffee-brazil.jpg?url";
-import colombiaPhoto from "@/assets/coffee-colombia.jpg?url";
-import blendPhoto    from "@/assets/coffee-blend.jpg?url";
+import ethiopiaPhoto from "@/assets/coffee-ethiopia.jpg.asset.json";
+import brazilPhoto from "@/assets/coffee-brazil.jpg.asset.json";
+import colombiaPhoto from "@/assets/coffee-colombia.jpg.asset.json";
+import blendPhoto from "@/assets/coffee-blend.jpg.asset.json";
 
 export const coffeeProducts = [
   {
     id: "ethiopia",
-    badge: "Светлая  обжарка",
+    badge: "Светлая обжарка",
     name: "Эфиопия Иргачефф",
     notes: "Жасмин, бергамот, спелый персик. Для воронки или аэропресса.",
     price: "28 BYN",
-    image: ethiopiaPhoto,
+    image: ethiopiaPhoto.url,
     alt: "Светлые обжаренные зёрна кофе в открытой пачке",
   },
   {
@@ -21,7 +21,7 @@ export const coffeeProducts = [
     name: "Бразилия Серрадо",
     notes: "Шоколад, орех, карамель. Универсальный кофе для эспрессо и фильтра.",
     price: "24 BYN",
-    image: brazilPhoto,
+    image: brazilPhoto.url,
     alt: "Зёрна средней обжарки в мешочке с деревянным совком",
   },
   {
@@ -30,7 +30,7 @@ export const coffeeProducts = [
     name: "Колумбия Уила",
     notes: "Тёмный шоколад, чернослив, табак. Плотное тело для эспрессо.",
     price: "26 BYN",
-    image: colombiaPhoto,
+    image: colombiaPhoto.url,
     alt: "Крупный план тёмных обжаренных зёрен кофе",
   },
   {
@@ -39,7 +39,7 @@ export const coffeeProducts = [
     name: "Домашний бленд «Кварта»",
     notes: "Наш фирменный купаж. Мягкий, сбалансированный, на каждый день.",
     price: "22 BYN",
-    image: blendPhoto,
+    image: blendPhoto.url,
     alt: "Крафтовый пакет кофе, деревянная ложка и зёрна на столе",
   },
 ];
@@ -80,7 +80,7 @@ export function CoffeeContent() {
                   asChild
                 >
                   <a
-                    href="#contacts"
+                    href="#lead"
                     aria-label={`Заказать ${product.name}`}
                     onClick={() => setOrderIntent({ type: "one-time", product: product.name })}
                   >

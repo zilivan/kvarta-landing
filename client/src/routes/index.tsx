@@ -4,12 +4,23 @@ import { SiteHeader, sections } from "@/components/site-header";
 import { Hero, HERO_IMAGE } from "@/components/hero";
 import { AboutContent } from "@/components/section-about";
 import { CoffeeContent } from "@/components/section-coffee";
+import { SubscriptionContent } from "@/components/section-subscription";
+import { DeliveryContent } from "@/components/section-delivery";
+import { ContactsContent } from "@/components/section-contacts";
+import { SiteFooter } from "@/components/site-footer";
 import { LeadForm } from "@/components/lead-form";
 
 const sectionContent: Record<string, ReactNode> = {
   about: <AboutContent />,
   coffee: <CoffeeContent />,
-  contacts: <LeadForm />,
+  subscription: <SubscriptionContent />,
+  delivery: <DeliveryContent />,
+  contacts: (
+    <>
+      <ContactsContent />
+      <LeadForm />
+    </>
+  ),
 };
 
 export const Route = createFileRoute("/")({
@@ -46,6 +57,7 @@ function Index() {
           </section>
         ))}
       </main>
+      <SiteFooter />
     </>
   );
 }

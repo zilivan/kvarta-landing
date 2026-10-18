@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors({
   origin: [
-    'http://localhost:5173',  // локальная разработка
-    'http://localhost:4173',  // preview mode
-    'https://ваш-ник.github.io'  // GitHub Pages (замените на ваш реальный URL)
+    'http://localhost:8080',  // локальная разработка
+    'http://localhost:8080',  // preview mode
+    'https://zilivan.github.io'  // GitHub Pages (замените на ваш реальный URL)
   ],
   credentials: true
 }));

@@ -10,8 +10,8 @@ import { useOrderIntent } from "@/lib/order-intent";
 import { captureUtm, COOLDOWN_KEY, COOLDOWN_MS, formatBelarusPhone, interests, leadFormSchema, leadSchema, type LeadFormValues, type UtmValues } from "@/lib/lead";
 
 export function LeadForm() {
+  
   const intent = useOrderIntent();
-  const API_URL = import.meta.env['VITE_API_URL'] || "https://api.zilserver.uk";
   const utm = useRef<UtmValues>({ utmSource: "", utmMedium: "", utmCampaign: "" });
   const [deadline, setDeadline] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -53,14 +53,24 @@ export function LeadForm() {
 
   useEffect(() => {
     if (!intent) return;
-    setValue("interest", intent.type === "one-time" ? "Разовый заказ" : "Подписка на кофе");
-    if (intent.product) setValue("comment", `Хочу заказать: ${intent.product}`);
+    setValue("interest", intent.type === "one-time" ? "Разовый заказ" : intent.type === "question" ? "Просто вопрос" : "Подписка на кофе");
+    if (intent.product) {
+      setValue(
+        "comment",
+        intent.type === "subscription"
+          ? `Хочу подписку: ${intent.product}`
+          : intent.type === "question"
+            ? `Хочу обсудить условия: ${intent.product}`
+            : `Хочу заказать: ${intent.product}`,
+      );
+    }
   }, [intent, setValue]);
 
   async function submit(values: LeadFormValues) {
     if (seconds > 0) return;
     setStatus("idle");
     try {
+      const API_URL = import.meta.env.VITE_API_URL || "https://api.zilserver.uk";
       const payload = leadSchema.parse({ ...values, ...utm.current });
       const response = await fetch(`${API_URL}/api/lead`, {
         method: "POST", headers: { "Content-Type": "application/json" },
@@ -79,7 +89,7 @@ export function LeadForm() {
 
   const timer = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
   return (
-    <div className="lead-body">
+    <div className="lead-body" id="lead">
       <h2 className="block-title">Оставьте заявку — мы перезвоним</h2>
       <p className="lead-subtitle">Менеджер поможет выбрать кофе, оформит заказ или ответит на вопросы.</p>
       <form className="lead-form" noValidate onSubmit={handleSubmit(submit)} aria-label="Форма заявки">
@@ -92,7 +102,6 @@ export function LeadForm() {
           <label htmlFor="lead-phone">Телефон <span aria-hidden="true">*</span></label>
           <Controller name="phone" control={control} render={({ field }) => (
             <Input {...field} id="lead-phone" className="lead-input" type="tel" inputMode="tel" autoComplete="tel" placeholder="+375 29 ___ __ __" maxLength={19} aria-required="true" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "lead-phone-error" : undefined}
-              onFocus={() => { if (!field.value) field.onChange("+375 "); }}
               onChange={(event) => field.onChange(formatBelarusPhone(event.target.value))} />
           )} />
           {errors.phone && <p className="lead-field-error" id="lead-phone-error">{errors.phone.message}</p>}

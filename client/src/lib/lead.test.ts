@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { formatBelarusPhone, leadSchema } from "./lead";
+import { COOLDOWN_MS, formatBelarusPhone, leadSchema } from "./lead";
 
 const valid = { name: "Анна", phone: "+375 29 123-45-67", interest: "Разовый заказ", comment: "" };
 describe("lead validation", () => {
+  it("blocks repeat submissions for exactly ten minutes", () => {
+    expect(COOLDOWN_MS).toBe(600000);
+  });
   it.each(["29", "33", "44", "25"])("accepts Belarus operator %s", (code) => {
     expect(leadSchema.safeParse({ ...valid, phone: `+375 ${code} 123-45-67` }).success).toBe(true);
   });
