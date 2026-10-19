@@ -2,8 +2,8 @@ import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 const ADDRESS = "Минск, ул. Короля, 9";
 const HOURS = "Пн–Пт 8:00–20:00, Сб–Вс 10:00–18:00";
-const PHONE = "+375 29 XXX-XX-XX"; // Заглушка: реальный номер мастерской ещё не назначен.
-const PHONE_HREF = "tel:+37529XXXXXXX";
+const PHONE = "+375 29 123-45-67"; // Заглушка: реальный номер мастерской ещё не назначен.
+const PHONE_HREF = "+375 29 123-45-67";
 const EMAIL = "hello@kvarta.by";
 const INSTAGRAM = "@kvarta.coffee";
 const INSTAGRAM_URL = "https://www.instagram.com/kvarta.coffee";
@@ -52,10 +52,8 @@ export function ContactsContent() {
       </div>
 
       <a className="contacts-map" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-        <span className="contacts-map-canvas" aria-hidden="true">
-          <span className="contacts-map-pin">
-            <MapPin />
-          </span>
+        <span className="contacts-map-pin" aria-hidden="true">
+          <MapPin />
         </span>
         <span className="contacts-map-text">
           <span className="contacts-map-address">{ADDRESS}</span>
