@@ -16,7 +16,7 @@ export function SiteFooter() {
           <span className="footer-logo">
             Кварта<span className="footer-dot">.</span>
           </span>
-          <p className="footer-tagline">Маленькая обжарка в Минске с 2019 года</p>
+          <p className="footer-tagline">Маленькая обжарка в Минске с 2019&nbsp;года</p>
         </div>
 
         <nav className="footer-nav" aria-label="Быстрые ссылки">

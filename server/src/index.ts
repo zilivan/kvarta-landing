@@ -12,7 +12,8 @@ app.use(cors({
   origin: [
     'http://localhost:8080',  // локальная разработка
     'http://localhost:8080',  // preview mode
-    'https://zilivan.github.io'  // GitHub Pages (замените на ваш реальный URL)
+    'https://zilivan.github.io',  // GitHub Pages (замените на ваш реальный URL)
+    'https://client.ivanitengener.workers.dev'
   ],
   credentials: true
 }));
