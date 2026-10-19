@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const PHONE_ERROR = "Введите номер в формате +375 29 XXX-XX-XX";
+export const PHONE_ERROR = "Введите номер в формате +375 29 123-45-67";
 export const interests = ["Подписка на кофе", "Разовый заказ", "Просто вопрос"] as const;
 export const leadFormSchema = z.object({
   name: z.string().trim().min(2, "Пожалуйста, укажите ваше имя").max(100, "Имя должно быть не длиннее 100 символов"),
