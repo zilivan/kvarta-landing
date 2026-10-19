@@ -120,7 +120,7 @@ export function LeadForm() {
           <Textarea id="lead-comment" className="lead-input lead-textarea" placeholder="Расскажите, какой кофе вы любите" maxLength={1000} aria-invalid={Boolean(errors.comment)} aria-describedby={errors.comment ? "lead-comment-error" : undefined} {...register("comment")} />
           {errors.comment && <p className="lead-field-error" id="lead-comment-error">{errors.comment.message}</p>}
         </div>
-        {status === "success" && <div className="lead-message lead-success" role="status"><CheckCircle2 aria-hidden="true" size={20} /><p>Спасибо! Мы перезвоним в течение 15 минут.</p></div>}
+        {status === "success" && <div className="lead-message lead-success" role="status"><CheckCircle2 aria-hidden="true" size={20} /><p>Спасибо! Мы перезвоним в течение 10 минут.</p></div>}
         {status === "error" && <div className="lead-message lead-failure" role="alert"><p>Не удалось отправить. Позвоните нам: +375 29 123-45-67</p></div>}
         <Button type="submit" variant="craft" className="lead-submit" disabled={!ready || isSubmitting || seconds > 0}>
           {isSubmitting ? <><LoaderCircle className="lead-spinner" aria-hidden="true" />Отправляем…</> : seconds > 0 ? `Заявка принята. Перезвоним через ${timer}` : <><Send aria-hidden="true" />Отправить заявку</>}
