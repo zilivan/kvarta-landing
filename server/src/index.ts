@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors({
   origin: [
-    'http://localhost:8080',  // локальная разработка
+    'http://localhost',  // локальная разработка
     'http://localhost:8080',  // preview mode
     'https://client.ivanitengener.workers.dev',
     'https://client1.ivanitengener.workers.dev'

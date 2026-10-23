@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: kvarta_client
     ports:
-      - "80:80"
+      - "80:3000"
     depends_on:
       - server
     restart: unless-stopped
@@ -24,8 +24,6 @@ services:
       - PORT=3000
       - DATABASE_URL=file:/app/prisma/dev.db
     volumes:
-      - sqlite_data:/app/prisma
+      - ./server/prisma:/app/prisma
     restart: unless-stopped
 
-volumes:
-  sqlite_data:
