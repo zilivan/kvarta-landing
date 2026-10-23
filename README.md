@@ -40,3 +40,21 @@ cd server && npm install && npx prisma generate && npx prisma db push && npm run
 
 # Frontend
 cd client && npm install && npm run dev
+
+## 🔄 CI/CD
+
+Проект настроен на автоматическую сборку Docker-образов через GitHub Actions.
+
+### Как это работает:
+1. При каждом `git push` в ветку `main` или `develop` запускается workflow
+2. GitHub Actions собирает Docker-образы для client и server
+3. Образы пушатся в GitHub Container Registry (GHCR) с тегами:
+   - `main` / `develop` (имя ветки)
+   - `a1b2c3d...` (хеш коммита для точной трассировки)
+   - `latest` (только для main)
+
+### Деплой на production:
+```bash
+# На сервере
+docker login ghcr.io -u username -p token
+docker compose -f docker-compose.prod.yml up -d
